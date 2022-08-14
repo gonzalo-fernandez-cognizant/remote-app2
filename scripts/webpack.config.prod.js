@@ -12,9 +12,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.[contenthash].js',
         path:  path.resolve(__dirname, '../dist'),
-        publicPath: '',
-        // publicPath: 'file:///home/gonzalofernandez/projects/pocs-and-tutos/webpack-tuto/module-federation/build-test/',
-
+        publicPath: 'https://remote-app1.vercel.app/',
         // clean: true
         // clean: {
         //     dry: true
@@ -87,13 +85,13 @@ module.exports = {
             filename: '[name].[contenthash].css'
         }),
         new CleanWebpackPlugin(),
-        // new HtmlWebpackPlugin({
-        //     template: './component/index.html',
-        //     meta: {
-        //         description: 'Meta tag inserted from webpack'
-        //     },
-        //     filename: 'index.html'
-        // }),
+        new HtmlWebpackPlugin({
+            template: './component/index.html',
+            meta: {
+                description: 'Meta tag inserted from webpack'
+            },
+            filename: 'index.html'
+        }),
         new ModuleFederationPlugin({
             name: 'MyApp2',
             filename: 'remoteApp2.js',
