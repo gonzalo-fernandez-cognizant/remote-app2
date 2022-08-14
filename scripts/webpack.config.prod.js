@@ -12,7 +12,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.[contenthash].js',
         path:  path.resolve(__dirname, '../dist'),
-        publicPath: 'https://remote-app1.vercel.app/',
+        publicPath: 'https://remote-app2.vercel.app/',
         // clean: true
         // clean: {
         //     dry: true
